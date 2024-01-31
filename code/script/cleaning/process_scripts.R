@@ -1,0 +1,16 @@
+#############################################
+############ EASY RUN TO GET DATA ###########
+
+set_project_wd <- function(folder){
+  user=Sys.info()[[6]]
+  if(user=="jeffrey_andrews") setwd(paste0("C:/Users/jeffrey_andrews/OneDrive/Documents/", folder))
+  else if(user=="Jeff") setwd(paste0("C:/Users/Jeff/OneDrive/Documents/", folder))
+  else if(user == 'jeffr')  setwd(paste0("C:/Users/jeffr/OneDrive/Documents/", folder))
+}
+set_project_wd("Risk")
+source("code/script/getData.R")
+source("code/script/getGraphs.R")
+source("code/script/getSurvey.R")
+dl=getData(load_imputed = F)
+g=getGraphs(shehiaF = c("kifundi")) 
+
